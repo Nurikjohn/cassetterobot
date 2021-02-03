@@ -12,10 +12,10 @@ const error = require('./error');
 const protect = require('./protect');
 
 module.exports = (bot) => {
+    bot.on('inline_query', search);
     bot.use(protect);
 
     bot.start(start);
-    bot.on('inline_query', search);
 
     bot.hears(/movie\/(.+)/, movie);
     bot.hears(/movie (.+)/, movie);
