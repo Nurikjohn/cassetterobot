@@ -8,8 +8,11 @@ const choosechannel = require('./choosechannel');
 const movie = require('./movie');
 const send = require('./send');
 const back = require('./back');
+const error = require('./error');
 
 module.exports = (bot) => {
+    // bot.use(clearsession);
+
     bot.start(start);
     bot.on('inline_query', search);
 
@@ -22,4 +25,6 @@ module.exports = (bot) => {
     bot.action(/choose_channel/, choosechannel);
 
     bot.use(savesession);
+
+    bot.catch(error);
 };

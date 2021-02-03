@@ -1,6 +1,7 @@
 const keyboards = require('../keyboards');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const {
         i18n,
         answerCbQuery,
@@ -16,4 +17,4 @@ module.exports = async (ctx, next) => {
     reply(i18n.t('choose_channel'), keyboards.channels(i18n, channels));
 
     next();
-};
+});

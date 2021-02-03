@@ -2,8 +2,9 @@ const Api = require('../services/api');
 const keyboards = require('../keyboards');
 const channelsIds = require('../constants/channels');
 const { generateCaption } = require('../utils/lazy');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const {
         match: [_, id],
         replyWithPhoto,
@@ -16,13 +17,13 @@ module.exports = async (ctx, next) => {
 
     const movie = await Api.get(id);
 
-    if (!movie) return reply('404, Movie not found!');
+    if (movie && movie.error) return reply('404, Movie not found!');
 
     ctx.session.movie = movie;
 
     let predictedChannelId = channelsIds[movie.type];
 
-    if (!predictedChannelId) predictedChannelId = channel.id;
+    if (!predictedChannelId) channel && (predictedChannelId = channel.id);
     if (!predictedChannelId) predictedChannelId = channelsIds.cassette;
 
     predictedChannel = channels.filter(
@@ -40,4 +41,4 @@ module.exports = async (ctx, next) => {
     );
 
     next();
-};
+});

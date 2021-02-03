@@ -1,7 +1,8 @@
 const keyboards = require('../keyboards');
 const channelsIds = require('../constants/channels');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const { reply, i18n, telegram } = ctx;
 
     const channels = [];
@@ -16,4 +17,4 @@ module.exports = async (ctx, next) => {
     reply(i18n.t('search_instructions'), keyboards.inlineswitch(i18n));
 
     next();
-};
+});

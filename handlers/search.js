@@ -1,6 +1,7 @@
 const Api = require('../services/api');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const {
         inlineQuery: { query },
         answerInlineQuery,
@@ -27,4 +28,4 @@ module.exports = async (ctx, next) => {
     );
 
     await answerInlineQuery(inlineresults);
-};
+});

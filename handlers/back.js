@@ -1,7 +1,8 @@
 const menu = require('../constants/menu');
 const keyboards = require('../keyboards');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const {
         answerCbQuery,
         i18n,
@@ -26,4 +27,4 @@ module.exports = async (ctx, next) => {
             );
         }
     }
-};
+});

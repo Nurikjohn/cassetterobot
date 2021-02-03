@@ -1,7 +1,8 @@
 const keyboards = require('../keyboards');
 const { generateCaption } = require('../utils/lazy');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const {
         session: { movie, channels },
         answerCbQuery,
@@ -36,4 +37,4 @@ module.exports = async (ctx, next) => {
     ctx.session.channel = channel;
 
     next();
-};
+});

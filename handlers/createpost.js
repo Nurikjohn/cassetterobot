@@ -1,6 +1,7 @@
 const keyboards = require('../keyboards');
+const catchAsync = require('../utils/catchAsync');
 
-module.exports = async (ctx, next) => {
+module.exports = catchAsync(async (ctx, next) => {
     const { editMessageText, answerCbQuery, i18n } = ctx;
 
     answerCbQuery();
@@ -8,4 +9,4 @@ module.exports = async (ctx, next) => {
         i18n.t('search_instructions'),
         keyboards.inlineswitch(i18n)
     );
-};
+});
