@@ -1,0 +1,21 @@
+{
+    "en": "🇺🇸 English",
+    "ru": "🇷🇺 Русский",
+    "uz": "🇺🇿 O'zbek",
+    "hello": "Hi 👋, Lorem ipsum dolor sit amet.",
+    "search_instructions": "Send  `/movie {id}`  command to create new post or just search for it\n\n`[You can also send link from app, I can handle it 😉]`",
+    "settings": "⚙️  Settings",
+    "back": "⬅️  Back",
+    "change_lang": "🇺🇸 Change language",
+    "choose_lang": "Choose language",
+    "create_post": "📼  Create post",
+    "search": "🔍  Search",
+    "watch": "📼  Watch now",
+    "install": "📥  Install app",
+    "send": "✅  Send",
+    "send_to": "✅  Send to ${channel}",
+    "remove": "📼  Watch now",
+    "message_sent": "[Message](${message_url}) successfully sent to ${channel} ✅",
+    "settings_info": "⚙️  Settings\n\nCurrent channel: @${channel}",
+    "choose_channel": "📢  Choose channel"
+}

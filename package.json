@@ -1,0 +1,19 @@
+{
+  "name": "book-preorder-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "nodemon bot.js"
+  },
+  "author": "Nuriddin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.8.11",
+    "telegraf": "^3.36.0",
+    "telegraf-i18n": "^6.6.0",
+    "telegraf-session-redis": "^5.1.0"
+  }
+}
