@@ -13,19 +13,17 @@ const protect = require('./protect');
 const comfirmcode = require('./comfirmcode');
 
 module.exports = (bot) => {
-    bot.start(protect, start);
+    bot.start(protect, start, savesession);
 
     bot.on('inline_query', search);
-    bot.hears(/movie\/(.+)/, protect, movie);
-    bot.hears(/movie (.+)/, protect, movie);
+    bot.hears(/movie\/(.+)/, protect, movie, savesession);
+    bot.hears(/movie (.+)/, protect, movie, savesession);
     bot.action('create_post', createpost);
 
     bot.action(/back_(.+)/, back);
-    bot.action(/send_(.+)/, send);
+    bot.action(/send_(.+)/, send, savesession);
     bot.action(/choose_channel/, choosechannel);
-    bot.on('message', comfirmcode, start);
-
-    bot.use(savesession);
+    bot.on('message', comfirmcode, start, savesession);
 
     bot.catch(error);
 };

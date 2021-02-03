@@ -24,10 +24,12 @@ module.exports = catchAsync(async (ctx, next) => {
 
     const message_url = `https://t.me/${channel.username}/${message_id}`;
 
+    console.log(channel.username);
+
     await deleteMessage();
     await reply(
         i18n.t('message_sent', {
-            channel: `@${channel.username}`,
+            channel: `@${channel.username.replace(/_/g, '\\_')}`,
             message_url,
         }),
         keyboards.markdown()
@@ -35,6 +37,7 @@ module.exports = catchAsync(async (ctx, next) => {
     await reply(i18n.t('search_instructions'), keyboards.inlineswitch(i18n));
 
     ctx.session.channel = channel;
+    ctx.session.movie = null;
 
     next();
 });
