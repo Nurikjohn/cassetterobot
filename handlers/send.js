@@ -24,8 +24,6 @@ module.exports = catchAsync(async (ctx, next) => {
 
     const message_url = `https://t.me/${channel.username}/${message_id}`;
 
-    console.log(channel.username);
-
     await deleteMessage();
     await reply(
         i18n.t('message_sent', {
