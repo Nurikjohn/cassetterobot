@@ -10,20 +10,20 @@ const send = require('./send');
 const back = require('./back');
 const error = require('./error');
 const protect = require('./protect');
+const comfirmcode = require('./comfirmcode');
 
 module.exports = (bot) => {
+    bot.start(protect, start);
+
     bot.on('inline_query', search);
-    bot.use(protect);
-
-    bot.start(start);
-
-    bot.hears(/movie\/(.+)/, movie);
-    bot.hears(/movie (.+)/, movie);
+    bot.hears(/movie\/(.+)/, protect, movie);
+    bot.hears(/movie (.+)/, protect, movie);
     bot.action('create_post', createpost);
 
     bot.action(/back_(.+)/, back);
     bot.action(/send_(.+)/, send);
     bot.action(/choose_channel/, choosechannel);
+    bot.on('message', comfirmcode, start);
 
     bot.use(savesession);
 

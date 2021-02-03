@@ -19,5 +19,6 @@
     "message_sent": "[Message](${message_url}) successfully sent to ${channel} ✅",
     "settings_info": "⚙️  Settings\n\nCurrent channel: @${channel}",
     "choose_channel": "📢  Choose channel",
-    "confirmation_code": "🧨 Confirmation code for ${user}: \n\n`${code}`"
+    "confirmation_code": "🧨 Confirmation code for ${user}: \n\n`${code}`",
+    "new_login": "✅ ${user} logged in at `${date}`"
 }
