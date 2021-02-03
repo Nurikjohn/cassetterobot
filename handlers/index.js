@@ -9,9 +9,10 @@ const movie = require('./movie');
 const send = require('./send');
 const back = require('./back');
 const error = require('./error');
+const protect = require('./protect');
 
 module.exports = (bot) => {
-    // bot.use(clearsession);
+    bot.use(protect);
 
     bot.start(start);
     bot.on('inline_query', search);

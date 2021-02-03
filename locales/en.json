@@ -3,6 +3,7 @@
     "ru": "🇷🇺 Русский",
     "uz": "🇺🇿 O'zbek",
     "hello": "Hi 👋, Lorem ipsum dolor sit amet.",
+    "not_logged": "`⚠️ You are not logged in! \nAsk moderator for cofirmation code`",
     "search_instructions": "Send  `/movie {id}`  command to create new post or just search for it\n\n`[You can also send link from app, I can handle it 😉]`",
     "settings": "⚙️  Settings",
     "back": "⬅️  Back",
@@ -17,5 +18,6 @@
     "remove": "📼  Watch now",
     "message_sent": "[Message](${message_url}) successfully sent to ${channel} ✅",
     "settings_info": "⚙️  Settings\n\nCurrent channel: @${channel}",
-    "choose_channel": "📢  Choose channel"
+    "choose_channel": "📢  Choose channel",
+    "confirmation_code": "🧨 Confirmation code for ${user}: \n\n`${code}`"
 }

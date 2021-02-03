@@ -35,6 +35,4 @@ exports.logsession = (ctx, next) => {
 
 exports.savesession = async (ctx, next) => {
     await redis.saveSession(redis.options.getSessionKey(ctx), ctx.session);
-
-    next();
 };
