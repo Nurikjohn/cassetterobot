@@ -27,10 +27,10 @@ module.exports = catchAsync(async (ctx, next) => {
     await deleteMessage();
     await reply(
         i18n.t('message_sent', {
-            channel: `@${channel.username.replace(/_/g, '\\_')}`,
+            channel: `@${channel.username}`,
             message_url,
         }),
-        keyboards.markdown()
+        keyboards.html()
     );
     await reply(i18n.t('search_instructions'), keyboards.inlineswitch(i18n));
 

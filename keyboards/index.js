@@ -4,6 +4,7 @@ const preview = require('./preview');
 const inlineswitch = require('./inlineswitch');
 const channels = require('./channels');
 const markdown = require('./markdown');
+const html = require('./html');
 const remove = require('./remove');
 
 module.exports = {
@@ -14,4 +15,5 @@ module.exports = {
     inlineswitch,
     channels,
     markdown,
+    html,
 };

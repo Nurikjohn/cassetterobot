@@ -5,7 +5,6 @@ const moderators = require('../constants/moderators');
 
 module.exports = catchAsync(async (ctx, next) => {
     const {
-        reply,
         i18n,
         telegram,
         session: { confirmationcode },
@@ -24,12 +23,12 @@ module.exports = catchAsync(async (ctx, next) => {
         let user;
 
         if (username) user = `@${username}`;
-        else user = `[${first_name}](tg://user?id=${id})`;
+        else user = `<a href="tg://user?id=${id}">${first_name}</a>`;
 
         telegram.sendMessage(
             moderators.nurikjohn,
             i18n.t('new_login', { user, date }),
-            keyboards.markdown()
+            keyboards.html()
         );
     }
 });

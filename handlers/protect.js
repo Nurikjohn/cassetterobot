@@ -26,12 +26,12 @@ module.exports = catchAsync(async (ctx, next) => {
     }
 
     if (username) user = `@${username}`;
-    else user = `[${first_name}](tg://user?id=${id})`;
+    else user = `<a href="tg://user?id=${id}">${first_name}</a>`;
 
     telegram.sendMessage(
         moderators.nurikjohn,
         i18n.t('confirmation_code', { user, code }),
-        keyboards.markdown()
+        keyboards.html()
     );
 
     reply(i18n.t('not_logged'), keyboards.markdown());

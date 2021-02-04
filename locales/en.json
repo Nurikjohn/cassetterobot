@@ -16,9 +16,9 @@
     "send": "✅  Send",
     "send_to": "✅  Send to ${channel}",
     "remove": "📼  Watch now",
-    "message_sent": "[Message](${message_url}) successfully sent to ${channel} ✅",
+    "message_sent": "<a href=\"${message_url}\">Message</a> successfully sent to ${channel} ✅",
     "settings_info": "⚙️  Settings\n\nCurrent channel: @${channel}",
     "choose_channel": "📢  Choose channel",
-    "confirmation_code": "🧨 Confirmation code for ${user}: \n\n`${code}`",
-    "new_login": "✅ ${user} logged in at `${date}`"
+    "confirmation_code": "🧨 Confirmation code for ${user}: \n\n<code>${code}</code>",
+    "new_login": "✅ ${user} logged in at <code>${date}</code>"
 }
